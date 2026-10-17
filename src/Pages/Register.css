@@ -1,0 +1,262 @@
+/* ================================
+   1. CSS Reset & Base Layout
+   ================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.register-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 1.25rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* ================================
+   2. Responsive Card Container
+   ================================ */
+.register-card {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.75rem 1.25rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    transition: padding 0.3s ease;
+}
+
+/* ================================
+   3. Header Section
+   ================================ */
+.register-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.register-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.375rem;
+}
+
+.register-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* ================================
+   4. Alerts & Notifications
+   ================================ */
+.register-error {
+    background-color: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #be123c;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.register-success {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* ================================
+   5. Form Controls
+   ================================ */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.375rem;
+}
+
+.form-input {
+    width: 100%;
+    min-height: 44px;
+    /* Mobile touch standard */
+    padding: 0.625rem 0.875rem;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.625rem;
+    color: #0f172a;
+    font-size: 1rem;
+    /* Prevents auto-zoom on mobile iOS inputs */
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+.form-input:focus {
+    border-color: #16a34a;
+    /* Emerald accent for register */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.error-message {
+    color: #e11d48;
+    font-size: 0.75rem;
+    margin-top: 0.375rem;
+    font-weight: 500;
+}
+
+/* ================================
+   6. Submit Button
+   ================================ */
+.submit-btn {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 0.25rem;
+    padding: 0.75rem 1rem;
+    background-color: #16a34a;
+    /* Emerald Green matching success states */
+    color: #ffffff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #15803d;
+    box-shadow: 0 6px 12px -2px rgba(22, 163, 74, 0.35);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.spinner {
+    animation: spin 0.8s linear infinite;
+    height: 1.125rem;
+    width: 1.125rem;
+    margin-right: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   7. Footer Section
+   ================================ */
+.register-footer {
+    margin-top: 1.75rem;
+    text-align: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+}
+
+.register-footer p {
+    font-size: 0.875rem;
+    color: #475569;
+}
+
+.switch-btn {
+    font-weight: 600;
+    color: #16a34a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    font-size: inherit;
+    text-decoration: underline;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.switch-btn:hover {
+    color: #166534;
+}
+
+.switch-btn:focus-visible {
+    outline: 2px solid #16a34a;
+}
+
+/* ================================
+   8. Media Queries (Responsive Adjustments)
+   ================================ */
+
+/* Mobile Small (< 360px) */
+@media (max-width: 359px) {
+    .register-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .register-title {
+        font-size: 1.35rem;
+    }
+}
+
+/* Tablets and Desktops (≥ 480px) */
+@media (min-width: 480px) {
+    .register-card {
+        padding: 2.25rem 2rem;
+    }
+
+    .register-title {
+        font-size: 1.75rem;
+    }
+
+    .form-input {
+        font-size: 0.875rem;
+    }
+
+    .register-header {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,316 @@
+/* ================================
+   1. CSS Reset & Base Layout
+   ================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 1.5rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================================
+   2. Responsive Card Container
+   ================================ */
+.dashboard-card {
+    width: 100%;
+    max-width: 650px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    height: fit-content;
+}
+
+/* ================================
+   3. Header & Navigation
+   ================================ */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+}
+
+.logout-btn {
+    background-color: #64748b;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-height: 38px;
+}
+
+.logout-btn:hover {
+    background-color: #475569;
+}
+
+/* ================================
+   4. Form Styles
+   ================================ */
+.record-form {
+    background-color: #f8fafc;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.form-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.625rem 0.875rem;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    color: #0f172a;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textarea-input {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.error-message {
+    color: #e11d48;
+    font-size: 0.75rem;
+    margin-top: 0.3125rem;
+    font-weight: 500;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.submit-btn {
+    flex: 1;
+    min-height: 44px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.submit-btn:hover {
+    background-color: #4338ca;
+}
+
+.submit-btn.update-mode {
+    background-color: #d97706;
+}
+
+.submit-btn.update-mode:hover {
+    background-color: #b45309;
+}
+
+.cancel-btn {
+    min-height: 44px;
+    padding: 0 1rem;
+    background-color: #94a3b8;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.cancel-btn:hover {
+    background-color: #64748b;
+}
+
+/* ================================
+   5. Records List Section
+   ================================ */
+.records-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.records-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.empty-state {
+    color: #64748b;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    border: 1px dashed #cbd5e1;
+}
+
+.records-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.record-item {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.record-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.record-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    word-break: break-word;
+}
+
+.record-item-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.record-item-desc {
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.record-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 0.4rem 0.875rem;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    min-height: 36px;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    background-color: #d97706;
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ================================
+   6. Media Queries (Responsive Adjustments)
+   ================================ */
+
+/* Tablets and Desktops (≥ 640px) */
+@media (min-width: 640px) {
+    .dashboard-card {
+        padding: 2rem;
+    }
+
+    .dashboard-title {
+        font-size: 1.75rem;
+    }
+
+    .form-input {
+        font-size: 0.875rem;
+    }
+
+    .record-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .record-actions {
+        border-top: none;
+        padding-top: 0;
+        align-items: center;
+    }
+}
